@@ -1,1 +1,3 @@
 # DelayCalc
+
+Calculadora de delays
