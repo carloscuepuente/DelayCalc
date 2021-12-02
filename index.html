@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Delays SCQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="CalculadoraDelay.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1">Control de Escala</h1>
+
+        <form action="" id="delayCalcForm">
+
+            <div class="row">
+
+                <div class="form-group col-md-3 col-6">
+                    <label for="DelayType">Tipo de Delay</label>
+                    <select class="form-control" name="DelayType" id="DelayType">
+                        <option value="inicial">Selecciona delay</option>
+                        <option value="Basico">Tiempos estandar</option>
+                        <option value="86">86</option>
+                        <option value="19">19</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="ConFinger">Conexion Finger</label>
+                    <input type="time" class="form-control noBasico" id="ConFinger" name="ConFinger">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="DesConFinger">Desconexión Finger</label>
+                    <input type="time" class="form-control noBasico" id="DesConFinger" name="DesConFinger">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="ConGPU">Conexion GPU</label>
+                    <input type="time" class="form-control noBasico" id="ConGPU" name="ConGPU">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="DesConGPU">Desconexión GPU</label>
+                    <input type="time" class="form-control noBasico" id="DesConGPU" name="DesConGPU">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="ConACU">Conexion ACU</label>
+                    <input type="time" class="form-control noBasico" id="ConACU" name="ConACU">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="DesConACU">Desconexión ACU</label>
+                    <input type="time" class="form-control noBasico" id="DesConACU" name="DesConACU">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="IniFuel">Inicio Fuel</label>
+                    <input type="time" class="form-control noBasico" id="IniFuel" name="IniFuel">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="FinFuel">Fin Fuel</label>
+                    <input type="time" class="form-control noBasico" id="FinFuel" name="FinFuel">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label class="my-1" for="OnBlocks">On Blocks</label>
+                    <input type="time" class="form-control" id="OnBlocks" name="OnBlocks">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label class="my-1" for="PreEmbarque">Incio Pre-Embarque</label>
+                    <input type="time" class="form-control" id="PreEmbarque" name="PreEmbarque">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="IniDesEmbarque">Inicio Des-Embarque</label>
+                    <input type="time" class="form-control" id="IniDesEmbarque" name="IniDesEmbarque">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="FinDesEmbarque">Fin Des-Embarque</label>
+                    <input type="time" class="form-control" id="FinDesEmbarque" name="FinDesEmbarque">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="IniArrPMR">Inicio ArrPMR</label>
+                    <input type="time" class="form-control noBasico" id="IniArrPMR" name="IniArrPMR">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="FinArrPMR">Fin ArrPMR</label>
+                    <input type="time" class="form-control noBasico" id="FinArrPMR" name="FinArrPMR">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="IniEmbarque">Inicio Embarque</label>
+                    <input type="time" class="form-control" id="IniEmbarque" name="IniEmbarque">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="FinEmbarque">Fin Embarque</label>
+                    <input type="time" class="form-control" id="FinEmbarque" name="FinEmbarque">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="IniDepPMR">Inicio DepPMR</label>
+                    <input type="time" class="form-control noBasico" id="IniDepPMR" name="IniDepPMR">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="FinDepPMR">Fin DepPMR</label>
+                    <input type="time" class="form-control noBasico" id="FinDepPMR" name="FinDepPMR">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label class="my-1" for="CierreEmbarque">Cierre Embarque</label>
+                    <input type="time" class="form-control" id="CierreEmbarque" name="CierreEmbarque">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label class="my-1" for="EntregaLID">Entrega de LID</label>
+                    <input type="time" class="form-control" id="EntregaLID" name="EntregaLID">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label class="my-1" for="CierrePuertasAC">Cierre Puertas A/C</label>
+                    <input type="time" class="form-control" id="CierrePuertasAC" name="CierrePuertasAC ">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label class="my-1" for="OffBlocks">Off Blocks</label>
+                    <input type="time" class="form-control" id="OffBlocks" name="OffBlocks">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="STA">STA</label>
+                    <input type="time" class="form-control" id="STA" name="STA">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="STD">STD</label>
+                    <input type="time" class="form-control" id="STD" name="STD">
+                </div>
+            </div>
+
+            <div>
+
+                <button type="submit" class="btn btn-success">Calcular</button>
+
+            </div>
+
+        </form>
+
+        <div class="row" id="divResult">
+
+        </div>
+
+
+    </div>
+
+
+    <!-- 
+    STA 11:00, STD 11:30 ATA STD+0
+    1st pax off STD-28 / Last pax off STD-19 / total time: 9 min
+    1st pax on STD-17 / Last pax on at STD+0 / total time: 17min
+    TOB count in & out 175+3 / 171+2
+    1st pax scanned STD-28 / last pax scanned at STD-1 / total time: 27min
+    LID delivered at STD+2
+    A/C doors closed at STD+2
+    On-blox STD-30 / Off-blox STD+4 / total time: 34 min
+
+
+ -->
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <script src="CalculadoraDelay.js"></script>
+</body>
+
+</html>
