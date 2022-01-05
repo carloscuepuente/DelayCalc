@@ -26,11 +26,11 @@
 
                 <div class="form-group col-md-3 col-6">
                     <label for="DelayType">Tipo de Delay</label>
-                    <select class="form-control" name="DelayType" id="DelayType">
-                        <option value="inicial">Selecciona delay</option>
-                        <option value="Basico">Tiempos estandar</option>
+                    <select class="form-control pointer" name="DelayType" id="DelayType">
+                        <option value="inicial">Selecciona un delay</option>
+                        <option value="Basico">Tiempos estándar</option>
                         <option value="86">86</option>
-                        <option value="19">19</option>
+                        <!-- <option value="19">19</option> -->
                     </select>
                 </div>
 
@@ -39,48 +39,48 @@
 
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="ConFinger">Conexion Finger</label>
+                    <label class="my-1 noBasico" for="ConFinger">Conexion Finger</label>
                     <input type="time" class="form-control noBasico" id="ConFinger" name="ConFinger">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="DesConFinger">Desconexión Finger</label>
+                    <label class="my-1 noBasico" for="DesConFinger">Desconexión Finger</label>
                     <input type="time" class="form-control noBasico" id="DesConFinger" name="DesConFinger">
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="ConGPU">Conexion GPU</label>
+                    <label class="my-1 noBasico" for="ConGPU">Conexion GPU</label>
                     <input type="time" class="form-control noBasico" id="ConGPU" name="ConGPU">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="DesConGPU">Desconexión GPU</label>
+                    <label class="my-1 noBasico" for="DesConGPU">Desconexión GPU</label>
                     <input type="time" class="form-control noBasico" id="DesConGPU" name="DesConGPU">
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="ConACU">Conexion ACU</label>
+                    <label class="my-1 noBasico" for="ConACU">Conexion ACU</label>
                     <input type="time" class="form-control noBasico" id="ConACU" name="ConACU">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="DesConACU">Desconexión ACU</label>
+                    <label class="my-1 noBasico" for="DesConACU">Desconexión ACU</label>
                     <input type="time" class="form-control noBasico" id="DesConACU" name="DesConACU">
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="IniFuel">Inicio Fuel</label>
+                    <label class="my-1 noBasico" for="IniFuel">Inicio Fuel</label>
                     <input type="time" class="form-control noBasico" id="IniFuel" name="IniFuel">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="FinFuel">Fin Fuel</label>
+                    <label class="my-1 noBasico" for="FinFuel">Fin Fuel</label>
                     <input type="time" class="form-control noBasico" id="FinFuel" name="FinFuel">
                 </div>
             </div>
@@ -99,51 +99,80 @@
                 </div>
             </div>
 
-
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="IniDesEmbarque">Inicio Des-Embarque</label>
-                    <input type="time" class="form-control" id="IniDesEmbarque" name="IniDesEmbarque">
+                    <label class="my-1 hide PreEmbarqueOptional" for="PreEmbarqueStop">Pre-Embarque Stop <span
+                            class="badge bg-success">New</span></label>
+                    <input type="time" class="form-control hide PreEmbarqueOptional" id="PreEmbarqueStop"
+                        name="PreEmbarqueStop">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="FinDesEmbarque">Fin Des-Embarque</label>
-                    <input type="time" class="form-control" id="FinDesEmbarque" name="FinDesEmbarque">
+                    <label class="my-1 hide PreEmbarqueOptional" for="PreEmbarqueStart">Pre-Embarque Start <span
+                            class="badge bg-success">New</span></label>
+                    <input type="time" class="form-control hide PreEmbarqueOptional" id="PreEmbarqueStart"
+                        name="PreEmbarqueStart">
                 </div>
             </div>
 
             <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="my-1" for="IniDesEmbarque">Inicio Des-Embarque</label>
+                    <input type="time" class="form-control" id="IniDesEmbarque" name="IniDesEmbarque">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="my-1" for="FinDesEmbarque">Fin Des-Embarque</label>
+                    <input type="time" class="form-control" id="FinDesEmbarque" name="FinDesEmbarque">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="my-1" for="PasajeIn">Pasaje In <span class="badge bg-success">New</span></label>
+                    <input type="text" class="form-control" id="PasajeIn" name="PasajeIn" pattern="\d{1,3}\+\d{1,2}"
+                        placeholder="189+3" required>
+                </div>
+
+
+            </div>
+
+            <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="IniArrPMR">Inicio ArrPMR</label>
+                    <label class="my-1 noBasico" for="IniArrPMR">Inicio ArrPMR</label>
                     <input type="time" class="form-control noBasico" id="IniArrPMR" name="IniArrPMR">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="FinArrPMR">Fin ArrPMR</label>
+                    <label class="my-1 noBasico" for="FinArrPMR">Fin ArrPMR</label>
                     <input type="time" class="form-control noBasico" id="FinArrPMR" name="FinArrPMR">
                 </div>
             </div>
 
             <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label class="my-1" for="IniEmbarque">Inicio Embarque</label>
                     <input type="time" class="form-control" id="IniEmbarque" name="IniEmbarque">
                 </div>
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label class="my-1" for="FinEmbarque">Fin Embarque</label>
                     <input type="time" class="form-control" id="FinEmbarque" name="FinEmbarque">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="my-1" for="PasajeOut">Pasaje Out <span class="badge bg-success">New</span></label>
+                    <input type="text" class="form-control" id="PasajeOut" name="PasajeOut" pattern="\d{1,3}\+\d{1,2}"
+                        placeholder="189+3" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="IniDepPMR">Inicio DepPMR</label>
+                    <label class="my-1 noBasico" for="IniDepPMR">Inicio DepPMR</label>
                     <input type="time" class="form-control noBasico" id="IniDepPMR" name="IniDepPMR">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label class="my-1" for="FinDepPMR">Fin DepPMR</label>
+                    <label class="my-1 noBasico" for="FinDepPMR">Fin DepPMR</label>
                     <input type="time" class="form-control noBasico" id="FinDepPMR" name="FinDepPMR">
                 </div>
             </div>
