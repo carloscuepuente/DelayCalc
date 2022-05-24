@@ -118,8 +118,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
         OffBlocks = data.OffBlocks
         crewArrival = data.CrewArrival
 
-        console.log(data)
-
         const divContainer = document.querySelector("#divResult")
         const newParagraph = document.createElement("p");
         newParagraph.innerText = `
@@ -149,6 +147,37 @@ document.querySelector("form").addEventListener("submit", (event) => {
         `
         divContainer.appendChild(newParagraph);
     };
+
+    if (delayCode === "19") {
+        STA = data.STA;
+        STD = data.STD;
+        pmrIn = data.PmrIn;
+        iniArrPMR = data.IniArrPMR;
+        finArrPMR = data.FinArrPMR;
+        pmrOut = data.PmrOut;
+        iniDepPMR = data.IniDepPMR;
+        finDepPMR = data.FinDepPMR;
+        fwdStairsNonPmr = data.FWDstairNonPMR;
+        aftStairsNonPmr = data.AFTstairNonPMR;
+        OffBlocks = data.OffBlocks
+
+
+        const divContainer = document.querySelector("#divResult")
+        const newParagraph = document.createElement("p");
+        newParagraph.innerText = `
+        STA ${parseTimeAndFormat(STA)}, STD ${parseTimeAndFormat(STD)}
+        Arrival PMR:
+        ${pmrIn}
+        Departure PMR:
+        ${pmrOut}
+        Arr PMR started at STD ${getDuration(iniArrPMR, STD)} / finished at STD ${getDuration(finArrPMR, STD)} / total time: ${getDuration(finArrPMR, iniArrPMR)}
+        Dep PMR started at STD ${getDuration(iniDepPMR, STD)} / finished at STD ${getDuration(finDepPMR, STD)} / total time: ${getDuration(finDepPMR, iniDepPMR)}
+
+        First Non PMR in FWD stairs at STD ${getDuration(fwdStairsNonPmr, STD)} / First Non PMR in AFT stairs at STD ${getDuration(aftStairsNonPmr, STD)} / total time: ${getDuration(aftStairsNonPmr, fwdStairsNonPmr)}
+        Unable to use both stairs for boarding passengers during this time, slowing down the boarding process.
+        `
+        divContainer.appendChild(newParagraph)
+    }
 
 })
 

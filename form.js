@@ -34,6 +34,7 @@ class ControlDeEscala {
                 <option value="firstWave">First Wave tiempos estándar</option>
                 <option value="86">86</option>
                 <option value="Single">Único tiempo relevante</option>
+                <option value="19">19 (PMR típico)</option>
             </select>
         </div>
         `
@@ -388,6 +389,92 @@ class ControlDeEscala {
 
     };
 
+    display19() {
+        this.displayContainer.innerHTML = ``
+        this.displayContainer.innerHTML = `
+        <div class="row">
+
+                <div class="form-group col-md-6">
+                    <label for="PmrIn">Arrival PMR assistance</label>
+                    <textarea class="form-control" name="PmrIn" id="PmrIn" rows="3"></textarea>
+                </div>
+
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="my-1 noBasico" for="IniArrPMR">Inicio ArrPMR</label>
+                    <input type="time" class="form-control noBasico" id="IniArrPMR" name="IniArrPMR">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1 noBasico" for="FinArrPMR">Fin ArrPMR</label>
+                    <input type="time" class="form-control noBasico" id="FinArrPMR" name="FinArrPMR">
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="form-group col-md-6">
+                    <label for="PmrOut">Departure PMR assistance</label>
+                    <textarea class="form-control" name="PmrOut" id="PmrOut" rows="3"></textarea>
+                </div>
+
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="my-1 noBasico" for="IniDepPMR">Inicio DepPMR</label>
+                    <input type="time" class="form-control noBasico" id="IniDepPMR" name="IniDepPMR">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1 noBasico" for="FinDepPMR">Fin DepPMR</label>
+                    <input type="time" class="form-control noBasico" id="FinDepPMR" name="FinDepPMR">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="FWDstairNonPMR">1er Non PMR Pax FWD stairs</label>
+                    <input type="time" class="form-control" id="FWDstairNonPMR" name="FWDstairNonPMR">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="AFTstairNonPMR">1er Non PMR Pax AFT stairs</label>
+                    <input type="time" class="form-control" id="AFTstairNonPMR" name="AFTstairNonPMR">
+                </div>
+
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col">
+                    <label class="my-1" for="OffBlocks">Off Blocks</label>
+                    <input type="time" class="form-control" id="OffBlocks" name="OffBlocks">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="STA">STA</label>
+                    <input type="time" class="form-control" id="STA" name="STA">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="my-1" for="STD">STD</label>
+                    <input type="time" class="form-control" id="STD" name="STD">
+                </div>
+            </div>
+
+            <div>
+
+                <button type="submit" class="btn btn-success my-3">Calcular</button>
+
+            </div>
+        
+        `
+    }
+
     getAndDisplayDelayOption() {
         let delayTypeOption = this.containerId.querySelector("#DelayType");
         delayTypeOption.addEventListener("change", (event) => {
@@ -407,6 +494,11 @@ class ControlDeEscala {
             if (option === "Single") {
                 this.displaySingleTimeCalc();
             };
+            if (option === "19") {
+                this.display19();
+            };
+
+
         })
     };
 
